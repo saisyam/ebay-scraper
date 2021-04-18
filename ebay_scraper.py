@@ -6,7 +6,7 @@ import unicodedata
 
 def get_product(url, count):
     for i in range(1, count):
-        html = get_html_from_oxy(url+"?_pgn="+str(i))
+        html = get_html(url+"?_pgn="+str(i))
         soup = BeautifulSoup(html, "html5lib")
         maincontent = soup.find("div", {'id':'mainContent'})
         section = soup.find("section", {'class':'b-listing'})
@@ -20,7 +20,7 @@ def get_product(url, count):
 
 def scrape_product(purl):
     print(purl)
-    html = get_html_from_oxy(purl)
+    html = get_html(purl)
     soup = BeautifulSoup(html, "html5lib")
     msgpanel = soup.find('div', {'id','msgPanel'})
     if msgpanel is not None:
@@ -168,6 +168,7 @@ def scrape_product_type_3(soup, url):
     }
 
 if len(sys.argv) == 4:
+    get_proxy()
     f = open(sys.argv[3]+".json", "w")
     for item in get_product(sys.argv[1], int(sys.argv[2])):
         if len(item) > 0:
