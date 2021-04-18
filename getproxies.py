@@ -13,11 +13,12 @@ def write_proxies(html):
         tds = r.find_all('td')
         f.write(tds[0].get_text()+":"+tds[1].get_text()+"\n")
     f.close()
-    
+
 providers = {
     'ANONYMOUS':"https://free-proxy-list.net/anonymous-proxy.html",
     'US':"https://www.us-proxy.org/",
-    'UK':"https://free-proxy-list.net/uk-proxy.html"
+    'UK':"https://free-proxy-list.net/uk-proxy.html",
+    'SSL': "https://sslproxies.org/"
 }
 
 if len(sys.argv) == 2:

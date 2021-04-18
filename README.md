@@ -14,4 +14,4 @@ $ python3 ebay_scraper.py <url> <pagecount> <outfile>
 I am using residential proxies from [Oxylabs](https://oxylabs.io/) which will return the HTML for the URL. Their proxies are efficient when compared to free proxies. You can check the code in [utils.py](https://github.com/saisyam/ebay-scraper/blob/main/utils.py)
 
 # Using free proxies
-TBD
+Free proxies are available over the Internet from websites like [SSLProxies](https://sslproxies.org/), [Free-proxy-list](https://free-proxy-list.net/) etc. In [getproxies.py](https://github.com/saisyam/ebay-scraper/blob/main/getproxies.py) I have implemented scraper to extract the list of proxies and use them for Ebay scraper.
